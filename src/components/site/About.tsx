@@ -7,8 +7,8 @@ export function About() {
         <div className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
             <img
-              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80"
-              alt="Flour mill interior"
+              src="https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80"
+              alt="Sri Durga Ji flour manufacturing plant"
               loading="lazy"
               className="h-full w-full object-cover"
             />

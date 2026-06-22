@@ -48,38 +48,38 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.625rem;
 
-  /* Brand palette: Wheat Gold, Warm Cream, White, Dark Charcoal, Rich Brown */
-  --gold: oklch(0.78 0.13 75);
-  --gold-soft: oklch(0.88 0.08 80);
-  --cream: oklch(0.97 0.025 85);
-  --charcoal: oklch(0.22 0.015 60);
-  --brown: oklch(0.38 0.06 50);
+  /* Industrial B2B palette: Deep Navy, Industrial Gold, Wheat Beige, White, Charcoal */
+  --gold: #D4A54A;
+  --gold-soft: #E8C77A;
+  --cream: #F3E5C3;
+  --charcoal: #0B1F3A;          /* deep navy — primary brand */
+  --brown: #1E3A66;              /* secondary navy */
 
-  --background: oklch(0.985 0.012 85);
-  --foreground: oklch(0.22 0.015 60);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.015 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.015 60);
-  --primary: oklch(0.78 0.13 75);
-  --primary-foreground: oklch(0.22 0.015 60);
-  --secondary: oklch(0.94 0.03 80);
-  --secondary-foreground: oklch(0.22 0.015 60);
-  --muted: oklch(0.95 0.018 80);
-  --muted-foreground: oklch(0.48 0.025 60);
-  --accent: oklch(0.38 0.06 50);
-  --accent-foreground: oklch(0.97 0.025 85);
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+  --primary: #0B1F3A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3E5C3;
+  --secondary-foreground: #0B1F3A;
+  --muted: #F4F6F9;
+  --muted-foreground: #5B6472;
+  --accent: #D4A54A;
+  --accent-foreground: #0B1F3A;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0.02 80);
-  --input: oklch(0.92 0.02 80);
-  --ring: oklch(0.78 0.13 75);
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E9EF;
+  --input: #E5E9EF;
+  --ring: #D4A54A;
 
-  --shadow-soft: 0 10px 40px -12px color-mix(in oklab, var(--charcoal) 18%, transparent);
-  --shadow-gold: 0 18px 50px -16px color-mix(in oklab, var(--gold) 55%, transparent);
-  --gradient-hero: linear-gradient(135deg, color-mix(in oklab, var(--charcoal) 92%, black) 0%, color-mix(in oklab, var(--brown) 70%, black) 100%);
+  --shadow-soft: 0 8px 30px -12px rgba(11, 31, 58, 0.18);
+  --shadow-gold: 0 14px 40px -18px rgba(212, 165, 74, 0.55);
+  --gradient-hero: linear-gradient(135deg, #0B1F3A 0%, #102a52 60%, #1E3A66 100%);
   --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
   --gradient-cream: linear-gradient(180deg, var(--cream) 0%, var(--background) 100%);
 }

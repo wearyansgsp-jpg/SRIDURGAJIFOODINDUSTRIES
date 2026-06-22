@@ -38,7 +38,7 @@ export function Header() {
                 {COMPANY_NAME}
               </div>
               <div className="truncate text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                Flour Mill • Since 1992
+                Flour Manufacturer • Since 1992
               </div>
             </div>
           </a>

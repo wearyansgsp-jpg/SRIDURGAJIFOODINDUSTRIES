@@ -1,5 +1,5 @@
 import * as Icons from "lucide-react";
-import { SERVICES, WHY_US } from "@/lib/site-data";
+import { useServices, useWhyUs } from "@/lib/site-queries";
 
 type IconName = keyof typeof Icons;
 
@@ -9,6 +9,7 @@ function Icon({ name, className }: { name: string; className?: string }) {
 }
 
 export function Services() {
+  const SERVICES = useServices();
   return (
     <section id="services" className="relative bg-charcoal py-24 text-cream sm:py-32 grain">
       <div className="mx-auto max-w-7xl px-4">
@@ -42,6 +43,7 @@ export function Services() {
 }
 
 export function WhyUs() {
+  const WHY_US = useWhyUs();
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4">

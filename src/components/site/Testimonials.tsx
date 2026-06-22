@@ -1,9 +1,10 @@
 import { Star } from "lucide-react";
-import { TESTIMONIALS } from "@/lib/site-data";
+import { useTestimonials } from "@/lib/site-queries";
 
 const SIZES = ["sm:row-span-2", "", "sm:row-span-1", "sm:row-span-2", ""];
 
 export function Testimonials() {
+  const TESTIMONIALS = useTestimonials();
   const loop = [...TESTIMONIALS, ...TESTIMONIALS];
   return (
     <section className="relative py-24 sm:py-32">
@@ -43,7 +44,7 @@ function Card({
   t,
   className = "",
 }: {
-  t: (typeof TESTIMONIALS)[number];
+  t: { name: string; role: string; review: string; img: string };
   className?: string;
 }) {
   return (

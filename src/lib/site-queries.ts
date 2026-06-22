@@ -25,7 +25,7 @@ function useDb<T>(key: string, fetcher: () => Promise<T[]>, fallback: T[]) {
     queryFn: fetcher,
     staleTime: 60_000,
   });
-  const rows = q.data && q.data.length > 0 ? q.data : fallback;
+  const rows = (q.data && q.data.length > 0 ? q.data : fallback) as T[];
   return rows;
 }
 
@@ -48,17 +48,25 @@ export function useHeroSlides() {
   );
 }
 
-export function useProducts() {
-  return useDb(
+export type Product = {
+  name: string;
+  rate: string;
+  image: string;
+  usps: string[];
+  ingredients: string[];
+};
+
+export function useProducts(): Product[] {
+  return useDb<Product>(
     "products",
     async () => {
       const { data, error } = await ACTIVE_ORDER(
         supabase.from("products").select("name,rate,image,usps,ingredients"),
       );
       if (error) throw error;
-      return (data ?? []) as any;
+      return (data ?? []) as Product[];
     },
-    PRODUCTS as any,
+    PRODUCTS as Product[],
   );
 }
 

@@ -14,10 +14,8 @@ export default defineConfig({
         outputPath: "/index.html",
       },
     },
-    // Don't fail the build if shell prerender hits a transient SSR error.
     prerender: {
       failOnError: false,
     },
-    server: { entry: "server" },
   },
 });

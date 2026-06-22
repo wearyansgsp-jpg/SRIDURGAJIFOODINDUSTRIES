@@ -57,11 +57,14 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <Link to="/admin" aria-label="Admin" className="hidden h-10 w-10 place-items-center rounded-md border border-border bg-white text-charcoal/70 transition hover:text-charcoal sm:grid">
+              <Lock className="h-4 w-4" />
+            </Link>
             <a
               href={waLink("Hi! Please share your latest price list.")}
               target="_blank"
               rel="noreferrer"
-              className="hidden rounded-xl bg-gradient-gold px-5 py-2.5 text-sm font-semibold text-charcoal shadow-gold transition hover:scale-[1.03] sm:inline-flex"
+              className="hidden rounded-md bg-gradient-gold px-5 py-2.5 text-sm font-semibold text-charcoal shadow-gold transition hover:scale-[1.03] sm:inline-flex"
             >
               Get Price List
             </a>

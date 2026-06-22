@@ -28,15 +28,16 @@ export function About() {
             Our Story
           </div>
           <h2 className="mt-3 font-display text-4xl font-bold text-charcoal sm:text-5xl">
-            Milling excellence,
-            <span className="block text-gradient-gold">harvested with care.</span>
+            Industrial flour manufacturing,
+            <span className="block text-gradient-gold">trusted across India.</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            From a single chakki in 1992 to a modern roller-mill plant serving twelve
-            states — Sri Durga Ji Food Industries has built its name on one promise:
-            consistent, honest flour. We source wheat directly from Punjab's most
-            reliable farms, mill on Swiss precision equipment, and test every batch
-            in-house.
+            Sri Durga Ji Food Industries operates a modern roller-flour mill in
+            Ludhiana, Punjab — manufacturing and supplying Maida, Suji, Wheat
+            Bran and Atta to distributors, wholesalers, HoReCa kitchens and
+            FMCG private-label brands across 12+ states. Every batch is
+            cleaned, tempered, milled, sifted and packed under FSSAI-compliant
+            controls with full in-house lab testing.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">

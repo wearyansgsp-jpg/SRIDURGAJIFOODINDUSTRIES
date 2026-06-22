@@ -25,8 +25,8 @@ export function Header() {
         }`}
       >
         <div
-          className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 ${
-            scrolled ? "glass shadow-soft" : "bg-transparent"
+          className={`flex items-center justify-between rounded-md px-4 py-3 transition-all duration-300 ${
+            scrolled ? "bg-white shadow-soft border border-border" : "bg-transparent"
           }`}
         >
           <a href="#home" className="flex items-center gap-3 min-w-0">
@@ -38,7 +38,7 @@ export function Header() {
                 {COMPANY_NAME}
               </div>
               <div className="truncate text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                Flour Mill • Since 1992
+                Flour Manufacturer • Since 1992
               </div>
             </div>
           </a>
@@ -75,7 +75,7 @@ export function Header() {
         </div>
 
         {open && (
-          <div className="mt-2 rounded-2xl glass p-4 shadow-soft lg:hidden">
+          <div className="mt-2 rounded-md border border-border bg-white p-4 shadow-soft lg:hidden">
             <nav className="grid gap-1">
               {NAV_LINKS.map((l) => (
                 <a

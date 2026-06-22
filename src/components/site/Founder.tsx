@@ -1,4 +1,4 @@
-import { Play, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import { PRESIDENTS } from "@/lib/site-data";
 
 export function Founder() {
@@ -43,19 +43,6 @@ export function Founder() {
           </div>
         </div>
 
-        {/* Video */}
-        <div className="mt-20">
-          <div className="group relative aspect-video overflow-hidden rounded-[2rem] shadow-soft">
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/HnpZ8AaTwm8?autoplay=1&mute=1&loop=1&playlist=HnpZ8AaTwm8&controls=1"
-              title="Inside our mill"
-              loading="lazy"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
 
         {/* Brain Behind */}
         <div className="mt-24">

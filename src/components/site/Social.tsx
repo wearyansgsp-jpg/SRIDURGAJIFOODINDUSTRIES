@@ -1,8 +1,9 @@
 import { QRCodeSVG } from "qrcode.react";
 import * as Icons from "lucide-react";
-import { SOCIAL } from "@/lib/site-data";
+import { useSocial } from "@/lib/site-queries";
 
 export function Social() {
+  const SOCIAL = useSocial();
   return (
     <section className="relative bg-charcoal py-24 text-cream sm:py-32 grain">
       <div className="mx-auto max-w-7xl px-4">

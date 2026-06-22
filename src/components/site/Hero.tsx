@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, ShieldCheck, Award, Factory, Sparkles } from "lucide-react";
-import { HERO_SLIDES, STATS, TRUST_BADGES, waLink } from "@/lib/site-data";
+import { STATS, TRUST_BADGES, waLink } from "@/lib/site-data";
+import { useHeroSlides } from "@/lib/site-queries";
 
 const BADGE_ICONS = [ShieldCheck, Award, Sparkles, Factory];
 
 export function Hero() {
+  const HERO_SLIDES = useHeroSlides();
   const [i, setI] = useState(0);
-  const slide = HERO_SLIDES[i];
+  const slide = HERO_SLIDES[i] ?? HERO_SLIDES[0];
 
   useEffect(() => {
     const id = setInterval(() => setI((p) => (p + 1) % HERO_SLIDES.length), 6000);
     return () => clearInterval(id);
-  }, []);
+  }, [HERO_SLIDES.length]);
+
+  if (!slide) return null;
 
   return (
     <section

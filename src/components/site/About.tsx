@@ -1,13 +1,15 @@
 import { Award, Leaf, ShieldCheck } from "lucide-react";
+import { useSiteSettings } from "@/lib/site-queries";
 
 export function About() {
+  const s = useSiteSettings();
   return (
     <section id="about" className="relative py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-2 lg:items-center">
         <div className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
             <img
-              src="https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80"
+              src={s.about_image ?? ""}
               alt="Sri Durga Ji flour manufacturing plant"
               loading="lazy"
               className="h-full w-full object-cover"
@@ -32,12 +34,7 @@ export function About() {
             <span className="block text-gradient-gold">trusted across India.</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            Sri Durga Ji Food Industries operates a modern roller-flour mill in
-            Ludhiana, Punjab — manufacturing and supplying Maida, Suji, Wheat
-            Bran and Atta to distributors, wholesalers, HoReCa kitchens and
-            FMCG private-label brands across 12+ states. Every batch is
-            cleaned, tempered, milled, sifted and packed under FSSAI-compliant
-            controls with full in-house lab testing.
+            {s.about_text}
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">

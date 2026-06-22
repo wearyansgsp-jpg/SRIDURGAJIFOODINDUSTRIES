@@ -1,7 +1,8 @@
 import { Sparkles } from "lucide-react";
-import { OFFERS } from "@/lib/site-data";
+import { useOffers } from "@/lib/site-queries";
 
 export function Offers() {
+  const OFFERS = useOffers();
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4">

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Info, MessageCircle, X } from "lucide-react";
-import { PRODUCTS, waLink } from "@/lib/site-data";
+import { waLink } from "@/lib/site-data";
+import { useProducts } from "@/lib/site-queries";
 
 export function Products() {
+  const PRODUCTS = useProducts();
   const [active, setActive] = useState<number | null>(null);
 
   return (

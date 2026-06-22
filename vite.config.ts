@@ -8,9 +8,15 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   tanstackStart: {
     // Static SPA mode — no SSR, builds a single index.html shell.
-    // Required for Cloudflare Pages / any static host.
     spa: {
       enabled: true,
+      prerender: {
+        outputPath: "/index.html",
+      },
+    },
+    // Don't fail the build if shell prerender hits a transient SSR error.
+    prerender: {
+      failOnError: false,
     },
     server: { entry: "server" },
   },

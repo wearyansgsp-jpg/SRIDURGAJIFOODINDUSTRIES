@@ -1,7 +1,9 @@
 import { Quote } from "lucide-react";
-import { PRESIDENTS } from "@/lib/site-data";
+import { usePresidents, useSiteSettings } from "@/lib/site-queries";
 
 export function Founder() {
+  const PRESIDENTS = usePresidents();
+  const s = useSiteSettings();
   return (
     <section id="founder" className="relative bg-gradient-cream py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4">

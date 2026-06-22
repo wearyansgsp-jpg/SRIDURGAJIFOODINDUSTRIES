@@ -212,10 +212,10 @@ const SETTINGS_FALLBACK: SiteSettings = {
 
 export function useSiteSettings(): SiteSettings {
   const q = useQuery({
-    queryKey: ["site_settings"],
+    queryKey: ["public_site_info"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("site_settings")
+      const { data, error } = await (supabase as any)
+        .from("public_site_info")
         .select("*")
         .eq("id", 1)
         .maybeSingle();

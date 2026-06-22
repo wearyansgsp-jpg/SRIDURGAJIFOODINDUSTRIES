@@ -397,7 +397,57 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      public_site_info: {
+        Row: {
+          about_image: string | null
+          about_text: string | null
+          address: string | null
+          company_name: string | null
+          email: string | null
+          founder_image: string | null
+          founder_name: string | null
+          founder_quote: string | null
+          founder_role: string | null
+          id: number | null
+          phone: string | null
+          tagline: string | null
+          updated_at: string | null
+          whatsapp_number: string | null
+        }
+        Insert: {
+          about_image?: string | null
+          about_text?: string | null
+          address?: string | null
+          company_name?: string | null
+          email?: string | null
+          founder_image?: string | null
+          founder_name?: string | null
+          founder_quote?: string | null
+          founder_role?: string | null
+          id?: number | null
+          phone?: string | null
+          tagline?: string | null
+          updated_at?: string | null
+          whatsapp_number?: string | null
+        }
+        Update: {
+          about_image?: string | null
+          about_text?: string | null
+          address?: string | null
+          company_name?: string | null
+          email?: string | null
+          founder_image?: string | null
+          founder_name?: string | null
+          founder_quote?: string | null
+          founder_role?: string | null
+          id?: number | null
+          phone?: string | null
+          tagline?: string | null
+          updated_at?: string | null
+          whatsapp_number?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       has_role: {

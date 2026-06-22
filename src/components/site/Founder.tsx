@@ -1,4 +1,4 @@
-import { Play, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import { PRESIDENTS } from "@/lib/site-data";
 
 export function Founder() {

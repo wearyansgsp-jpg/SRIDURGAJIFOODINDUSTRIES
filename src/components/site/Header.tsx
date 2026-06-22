@@ -75,7 +75,7 @@ export function Header() {
         </div>
 
         {open && (
-          <div className="mt-2 rounded-2xl glass p-4 shadow-soft lg:hidden">
+          <div className="mt-2 rounded-md border border-border bg-white p-4 shadow-soft lg:hidden">
             <nav className="grid gap-1">
               {NAV_LINKS.map((l) => (
                 <a

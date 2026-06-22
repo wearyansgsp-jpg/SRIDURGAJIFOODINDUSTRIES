@@ -11,15 +11,15 @@ export function Founder() {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80"
-                alt="Founder"
+                src={s.founder_image ?? ""}
+                alt={s.founder_name ?? "Founder"}
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-2xl glass-dark p-4">
-                <div className="font-display text-xl font-bold text-cream">Sh. Durga Prasad</div>
-                <div className="text-xs uppercase tracking-widest text-gold">Founder & Chairman</div>
+                <div className="font-display text-xl font-bold text-cream">{s.founder_name}</div>
+                <div className="text-xs uppercase tracking-widest text-gold">{s.founder_role}</div>
               </div>
             </div>
           </div>
@@ -34,13 +34,10 @@ export function Founder() {
             </h2>
             <Quote className="mt-6 h-8 w-8 text-gold" />
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              When my father set up our first chakki in 1992, he taught me one rule —
-              never compromise on the wheat you grind. Three decades later, that
-              promise still walks into every sack we send out. We are not just a
-              factory; we are custodians of a quality you can taste.
+              {s.founder_quote}
             </p>
             <div className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-charcoal px-4 py-3 text-sm text-cream">
-              — Sh. Durga Prasad
+              — {s.founder_name}
             </div>
           </div>
         </div>

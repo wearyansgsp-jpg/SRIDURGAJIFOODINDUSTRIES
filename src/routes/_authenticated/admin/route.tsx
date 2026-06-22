@@ -19,7 +19,7 @@ export const Route = createFileRoute("/_authenticated/admin")({
   component: AdminShell,
 });
 
-const NAV = [
+const NAV: Array<{ to: string; label: string; icon: typeof Inbox; exact?: boolean }> = [
   { to: "/admin", label: "Leads", icon: Inbox, exact: true },
   { to: "/admin/products", label: "Products", icon: Package },
   { to: "/admin/offers", label: "Offers", icon: Sparkles },
@@ -30,7 +30,7 @@ const NAV = [
   { to: "/admin/hero", label: "Hero Slides", icon: ImageIcon },
   { to: "/admin/social", label: "Social Links", icon: Share2 },
   { to: "/admin/settings", label: "Site Settings", icon: Settings },
-] as const;
+];
 
 function AdminShell() {
   const navigate = useNavigate();

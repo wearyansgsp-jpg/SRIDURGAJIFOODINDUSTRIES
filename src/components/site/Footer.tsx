@@ -1,9 +1,12 @@
 import { Wheat } from "lucide-react";
-import { COMPANY_NAME, NAV_LINKS, COMPANY_EMAIL, WHATSAPP_DISPLAY, SOCIAL } from "@/lib/site-data";
+import { NAV_LINKS } from "@/lib/site-data";
+import { useSiteSettings, useSocial } from "@/lib/site-queries";
 import * as Icons from "lucide-react";
 import mashoorLogo from "@/assets/mashoor-bano.png";
 
 export function Footer() {
+  const s = useSiteSettings();
+  const SOCIAL = useSocial();
   return (
     <footer className="bg-charcoal text-cream grain">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">

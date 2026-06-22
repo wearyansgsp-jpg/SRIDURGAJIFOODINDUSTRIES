@@ -5,7 +5,7 @@ import * as Icons from "lucide-react";
 import mashoorLogo from "@/assets/mashoor-bano.png";
 
 export function Footer() {
-  const s = useSiteSettings();
+  const cfg = useSiteSettings();
   const SOCIAL = useSocial();
   return (
     <footer className="bg-charcoal text-cream grain">
@@ -15,7 +15,7 @@ export function Footer() {
             <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-gold">
               <Wheat className="h-6 w-6 text-charcoal" />
             </div>
-            <div className="font-display text-lg font-bold">{COMPANY_NAME}</div>
+            <div className="font-display text-lg font-bold">{cfg.company_name}</div>
           </div>
           <p className="mt-4 max-w-xs text-sm text-cream/65">
             Premium flour mill crafting maida, suji, atta and wheat bran for India's
@@ -37,9 +37,9 @@ export function Footer() {
         <div>
           <div className="text-xs font-semibold uppercase tracking-widest text-gold">Contact</div>
           <ul className="mt-4 space-y-2.5 text-sm text-cream/70">
-            <li>{WHATSAPP_DISPLAY}</li>
-            <li>{COMPANY_EMAIL}</li>
-            <li>Ludhiana, Punjab, India</li>
+            <li>{cfg.phone}</li>
+            <li>{cfg.email}</li>
+            <li>{cfg.address}</li>
           </ul>
         </div>
 
@@ -67,7 +67,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-cream/50">
-          © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
+          © {new Date().getFullYear()} {cfg.company_name}. All rights reserved.
         </div>
       </div>
 

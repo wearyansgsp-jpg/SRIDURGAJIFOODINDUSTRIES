@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Wheat } from "lucide-react";
+import { Menu, X, Wheat, Lock } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { NAV_LINKS, COMPANY_NAME, waLink } from "@/lib/site-data";
 
 export function Header() {

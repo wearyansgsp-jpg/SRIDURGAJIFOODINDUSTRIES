@@ -69,16 +69,14 @@ export function Footer() {
       </div>
 
       {/* Mashoor Bano credit */}
-      <div className="bg-black px-4 py-10">
+      <div className="bg-black px-4 py-12">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <img src={mashoorLogo} alt="Mashoor Bano" className="h-16 w-auto sm:h-20" loading="lazy" />
-          <p className="mt-5 text-sm text-cream">
-            Website developed by <span className="font-semibold text-[#ff6b1a]">MashoorBano</span>
-          </p>
-          <p className="mt-1 text-xs text-cream/50">Atharv Aryan &nbsp;•&nbsp; 7814718340</p>
-          <a href="https://mashoorbano.com" target="_blank" rel="noreferrer" className="mt-2 text-sm font-semibold text-[#ff6b1a] hover:underline">
-            Mashoorbano.com
+          <a href="https://mashoorbano.com" target="_blank" rel="noreferrer" aria-label="MashoorBano">
+            <img src={mashoorLogo} alt="MashoorBano" className="h-28 w-auto sm:h-36" loading="lazy" />
           </a>
+          <p className="mt-5 text-sm text-cream/80">
+            Designed & developed by <span className="font-semibold text-[#ff6b1a]">MashoorBano</span> &nbsp;•&nbsp; +91 78147 18340
+          </p>
         </div>
       </div>
     </footer>

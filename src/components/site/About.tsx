@@ -1,7 +1,8 @@
 import { Award, Leaf, ShieldCheck } from "lucide-react";
+import { useSiteSettings } from "@/lib/site-queries";
 
 export function About() {
-  return (
+  const s = useSiteSettings();
     <section id="about" className="relative py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-2 lg:items-center">
         <div className="relative">

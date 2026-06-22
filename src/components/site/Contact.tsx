@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { z } from "zod";
-import { COMPANY_ADDRESS, COMPANY_EMAIL, WHATSAPP_DISPLAY } from "@/lib/site-data";
+import { useSiteSettings } from "@/lib/site-queries";
 import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
@@ -12,6 +12,7 @@ const schema = z.object({
 });
 
 export function Contact() {
+  const s = useSiteSettings();
   const [state, setState] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [err, setErr] = useState<string | null>(null);
 
@@ -60,9 +61,9 @@ export function Contact() {
             </p>
 
             <div className="mt-8 space-y-4">
-              <ContactRow icon={<MapPin className="h-5 w-5" />} label="Address" value={COMPANY_ADDRESS} />
-              <ContactRow icon={<Phone className="h-5 w-5" />} label="Phone" value={WHATSAPP_DISPLAY} />
-              <ContactRow icon={<Mail className="h-5 w-5" />} label="Email" value={COMPANY_EMAIL} />
+              <ContactRow icon={<MapPin className="h-5 w-5" />} label="Address" value={s.address ?? ""} />
+              <ContactRow icon={<Phone className="h-5 w-5" />} label="Phone" value={s.phone ?? ""} />
+              <ContactRow icon={<Mail className="h-5 w-5" />} label="Email" value={s.email ?? ""} />
             </div>
 
             <div className="mt-8 overflow-hidden rounded-3xl border border-border shadow-soft">

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Wheat, Lock } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { NAV_LINKS, COMPANY_NAME, waLink } from "@/lib/site-data";
+import { NAV_LINKS, waLink } from "@/lib/site-data";
+import { useSiteSettings } from "@/lib/site-queries";
 
 export function Header() {
+  const s = useSiteSettings();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -36,7 +38,7 @@ export function Header() {
             </div>
             <div className="min-w-0 leading-tight">
               <div className="truncate font-display text-base font-bold text-charcoal sm:text-lg">
-                {COMPANY_NAME}
+                {s.company_name}
               </div>
               <div className="truncate text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                 Flour Manufacturer • Since 1992

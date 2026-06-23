@@ -1,89 +1,34 @@
-## Audit result
 
-Your app is live and viewable on Lovable hosting, so the website code itself is not the main problem.
+## Goal
+Produce a single, portable SQL file you can run in your own Supabase project's SQL editor to recreate everything: enum types, tables, indexes, GRANTs, RLS policies, helper functions (`has_role`, `touch_updated_at`, `handle_new_user`), the `auth.users` → `user_roles` trigger, and all current row data.
 
-The Cloudflare Pages URL `https://sridurgajifoodindustries.pages.dev/` returns HTTP `404` at the root path. That means Cloudflare is not serving your app’s homepage at all.
+## Deliverable
+A new file: `supabase/exports/full-migration.sql`
 
-## Where the issue is most likely lying
+It will contain, in order:
 
-There are two deployment configuration issues visible from the project audit:
+1. **Extensions** — `create extension if not exists pgcrypto;`
+2. **Enum** — `app_role` (`admin`, `moderator`, `user`)
+3. **Functions** — `public.touch_updated_at()`, `public.has_role(uuid, app_role)`, `public.handle_new_user()` (verbatim from current DB)
+4. **Tables** (CREATE TABLE for all 12 public tables, exact column defs from live DB):
+   `user_roles`, `public_site_info`, `site_settings`, `leads`, `products`, `offers`, `services`, `why_us`, `testimonials`, `presidents`, `hero_slides`, `social_links`
+5. **GRANTs** on every table to `anon` / `authenticated` / `service_role` matching the existing policies (public-read tables get `anon` SELECT; `leads` and `user_roles` stay auth-only)
+6. **RLS enable + policies** — recreated exactly as they exist today (public read on content tables; admin-only write via `has_role`; `leads` insert open to anon, read/update/delete restricted to admins; `user_roles` self-read + admin-manage)
+7. **Triggers** — `trg_<table>_touch` BEFORE UPDATE on every content table, and `on_auth_user_created` AFTER INSERT on `auth.users` calling `handle_new_user()`
+8. **Seed data** — `INSERT INTO ... VALUES (...)` for every existing row in all public tables (hero_slides, products, services, offers, presidents, testimonials, social_links, why_us, public_site_info, site_settings). `leads` and `user_roles` left empty (they're per-user / per-install).
 
-1. **Cloudflare output folder is wrong if you used `dist`**
-   - This project’s static client files are expected under:
-     ```text
-     dist/client
-     ```
-   - If Cloudflare Pages is configured with output folder:
-     ```text
-     dist
-     ```
-     then Cloudflare is looking in the wrong folder.
+## How to use it on your own Supabase project
+1. Create a new Supabase project on your account.
+2. Open SQL Editor → paste contents of `supabase/exports/full-migration.sql` → Run.
+3. Update your app's `.env`:
+   - `VITE_SUPABASE_URL` = your new project URL
+   - `VITE_SUPABASE_PUBLISHABLE_KEY` = your new anon/publishable key
+4. Sign up the first user in your new project — `handle_new_user()` auto-grants them `admin`.
 
-2. **The current built `dist/client` folder does not contain `index.html`**
-   - I checked the generated local output and found:
-     ```text
-     dist/client/assets/
-     dist/client/_headers
-     dist/client/_redirects
-     dist/client/robots.txt
-     dist/client/sitemap.xml
-     ```
-   - But this required file is missing:
-     ```text
-     dist/client/index.html
-     ```
-   - Without `index.html`, Cloudflare Pages has nothing to serve for `/`, so the root URL shows 404.
+## Notes / scope
+- Only the `public` schema is exported. Supabase-managed schemas (`auth`, `storage`, etc.) are recreated automatically by Supabase itself when you make the new project.
+- Storage buckets: none exist in this project, so nothing to migrate there.
+- Edge function secrets (`LOVABLE_API_KEY` etc.) are not portable — you'll set those in your own project.
+- The file is idempotent-ish: uses `create ... if not exists` where possible, but seed `INSERT`s assume a fresh DB. Run on an empty project.
 
-## What is not the primary cause
-
-The Lovable/backend variables are probably not the reason for this exact error.
-
-If environment variables were wrong, the page would usually load and then show broken/missing data or console/API errors. Your Cloudflare URL is failing before the app even loads.
-
-## Cloudflare Pages settings to check
-
-Use these exact settings in Cloudflare Pages:
-
-```text
-Framework preset: None
-Build command: bun run build
-Build output directory: dist/client
-Root directory: / or blank
-Node version: default is usually fine
-```
-
-Do not use this as the output directory:
-
-```text
-dist
-```
-
-## Required environment variables
-
-In Cloudflare Pages settings, add these for both Production and Preview:
-
-```text
-VITE_SUPABASE_URL
-VITE_SUPABASE_PUBLISHABLE_KEY
-```
-
-Use the public/publishable backend key only, not any private service key.
-
-## Recommended fix path
-
-1. Change Cloudflare Pages output directory from `dist` to:
-   ```text
-   dist/client
-   ```
-2. Trigger a fresh Cloudflare deployment.
-3. Open the deployment details and confirm the uploaded files include:
-   ```text
-   index.html
-   assets/
-   _redirects
-   ```
-4. If `index.html` is still missing after a fresh build, then the project’s static build configuration needs to be corrected so `bun run build` emits `dist/client/index.html`.
-
-## Bottom line
-
-The Cloudflare Pages link is not live because Cloudflare is currently serving a deploy that does not expose a root `index.html`. The first thing to fix is the Pages output directory: use `dist/client`, not `dist`. If that still fails, the next issue is the missing `dist/client/index.html` from the build output.
+Confirm and I'll generate `supabase/exports/full-migration.sql` in the next step.

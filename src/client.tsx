@@ -7,18 +7,10 @@ import { queryClient, router } from './router'
 import './styles.css'
 
 async function main() {
-  // Get initial session ONCE before mounting
   const { data: { session } } = await supabase.auth.getSession()
-
-  // Pass supabase + session into router context
   router.update({
-    context: {
-      queryClient,
-      supabase,
-      session,
-    },
+    context: { queryClient, supabase, session },
   })
-
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>

@@ -1,39 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider, createRouter } from '@tanstack/react-router'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { routeTree } from './routeTree.gen'
+import { RouterProvider } from '@tanstack/react-router'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { supabase } from './integrations/supabase/client'
+import { queryClient, router } from './router'
 import './styles.css'
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 1000 * 60 * 5,
-      retry: 1,
+async function main() {
+  // Get initial session ONCE before mounting
+  const { data: { session } } = await supabase.auth.getSession()
+
+  // Pass supabase + session into router context
+  router.update({
+    context: {
+      queryClient,
+      supabase,
+      session,
     },
-  },
-})
+  })
 
-const router = createRouter({
-  routeTree,
-  defaultPreload: 'intent',
-  context: {
-    queryClient,
-  },
-})
-
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router
-  }
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </React.StrictMode>
+  )
 }
 
-const rootElement = document.getElementById('root')!
-
-ReactDOM.createRoot(rootElement).render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
-  </React.StrictMode>
-)
+main()

@@ -447,24 +447,6 @@ export type Database = {
       }
     }
     Functions: {
-      get_public_site_info: {
-        Args: never
-        Returns: {
-          about_image: string
-          about_text: string
-          address: string
-          company_name: string
-          email: string
-          founder_image: string
-          founder_name: string
-          founder_quote: string
-          founder_role: string
-          id: number
-          phone: string
-          tagline: string
-          whatsapp_number: string
-        }[]
-      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

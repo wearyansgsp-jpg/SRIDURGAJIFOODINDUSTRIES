@@ -189,6 +189,9 @@ export type SiteSettings = {
   founder_quote: string | null;
   about_image: string | null;
   about_text: string | null;
+  about_eyebrow: string | null;
+  about_headline: string | null;
+  about_headline_accent: string | null;
   founder_eyebrow: string | null;
   founder_headline: string | null;
   founder_headline_accent: string | null;
@@ -213,6 +216,9 @@ const SETTINGS_FALLBACK: SiteSettings = {
     "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80",
   about_text:
     "Sri Durga Ji Food Industries operates a modern roller-flour mill in Ludhiana, Punjab — manufacturing and supplying Maida, Suji, Wheat Bran and Atta to distributors, wholesalers, HoReCa kitchens and FMCG private-label brands across 12+ states. Every batch is cleaned, tempered, milled, sifted and packed under FSSAI-compliant controls with full in-house lab testing.",
+  about_eyebrow: "Our Story",
+  about_headline: "Industrial flour manufacturing,",
+  about_headline_accent: "trusted across India.",
   founder_eyebrow: "From the Founder",
   founder_headline: "Every grain carries",
   founder_headline_accent: "our family name.",

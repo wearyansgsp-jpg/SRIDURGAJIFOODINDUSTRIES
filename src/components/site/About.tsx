@@ -27,11 +27,11 @@ export function About() {
 
         <div>
           <div className="text-xs font-semibold uppercase tracking-[0.25em] text-brown">
-            Our Story
+            {s.about_eyebrow ?? "Our Story"}
           </div>
           <h2 className="mt-3 font-display text-4xl font-bold text-charcoal sm:text-5xl">
-            Industrial flour manufacturing,
-            <span className="block text-gradient-gold">trusted across India.</span>
+            {s.about_headline ?? "Industrial flour manufacturing,"}
+            <span className="block text-gradient-gold">{s.about_headline_accent ?? "trusted across India."}</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
             {s.about_text}

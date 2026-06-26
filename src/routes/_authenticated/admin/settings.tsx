@@ -21,6 +21,9 @@ type Settings = {
   founder_quote: string | null;
   about_image: string | null;
   about_text: string | null;
+  about_eyebrow: string | null;
+  about_headline: string | null;
+  about_headline_accent: string | null;
   founder_eyebrow: string | null;
   founder_headline: string | null;
   founder_headline_accent: string | null;
@@ -80,6 +83,11 @@ function SettingsPage() {
         {F("address", "Address", true)}
 
         <h2 className="mt-4 font-display text-lg font-bold text-charcoal">About section</h2>
+        {F("about_eyebrow", "About eyebrow (small label)")}
+        <div className="grid gap-4 sm:grid-cols-2">
+          {F("about_headline", "About headline")}
+          {F("about_headline_accent", "About headline accent (gold text)")}
+        </div>
         {F("about_image", "About image URL")}
         {F("about_text", "About paragraph", true)}
 

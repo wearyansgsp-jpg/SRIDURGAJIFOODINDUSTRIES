@@ -21,6 +21,9 @@ type Settings = {
   founder_quote: string | null;
   about_image: string | null;
   about_text: string | null;
+  about_eyebrow: string | null;
+  about_headline: string | null;
+  about_headline_accent: string | null;
   founder_eyebrow: string | null;
   founder_headline: string | null;
   founder_headline_accent: string | null;

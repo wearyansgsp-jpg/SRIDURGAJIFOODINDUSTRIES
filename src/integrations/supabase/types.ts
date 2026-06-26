@@ -223,6 +223,9 @@ export type Database = {
       }
       site_settings: {
         Row: {
+          about_eyebrow: string | null
+          about_headline: string | null
+          about_headline_accent: string | null
           about_image: string | null
           about_text: string | null
           address: string | null
@@ -244,6 +247,9 @@ export type Database = {
           whatsapp_number: string | null
         }
         Insert: {
+          about_eyebrow?: string | null
+          about_headline?: string | null
+          about_headline_accent?: string | null
           about_image?: string | null
           about_text?: string | null
           address?: string | null
@@ -265,6 +271,9 @@ export type Database = {
           whatsapp_number?: string | null
         }
         Update: {
+          about_eyebrow?: string | null
+          about_headline?: string | null
+          about_headline_accent?: string | null
           about_image?: string | null
           about_text?: string | null
           address?: string | null
@@ -414,6 +423,9 @@ export type Database = {
     Views: {
       public_site_info: {
         Row: {
+          about_eyebrow: string | null
+          about_headline: string | null
+          about_headline_accent: string | null
           about_image: string | null
           about_text: string | null
           address: string | null
@@ -434,6 +446,9 @@ export type Database = {
           whatsapp_number: string | null
         }
         Insert: {
+          about_eyebrow?: string | null
+          about_headline?: string | null
+          about_headline_accent?: string | null
           about_image?: string | null
           about_text?: string | null
           address?: string | null
@@ -454,6 +469,9 @@ export type Database = {
           whatsapp_number?: string | null
         }
         Update: {
+          about_eyebrow?: string | null
+          about_headline?: string | null
+          about_headline_accent?: string | null
           about_image?: string | null
           about_text?: string | null
           address?: string | null

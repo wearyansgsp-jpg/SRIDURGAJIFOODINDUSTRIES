@@ -90,6 +90,15 @@ function SettingsPage() {
         </div>
         {F("founder_image", "Founder photo URL")}
         {F("founder_quote", "Founder quote", true)}
+        {F("founder_eyebrow", "Founder eyebrow (small label)")}
+        <div className="grid gap-4 sm:grid-cols-2">
+          {F("founder_headline", "Founder headline")}
+          {F("founder_headline_accent", "Founder headline accent (gold text)")}
+        </div>
+
+        <h2 className="mt-4 font-display text-lg font-bold text-charcoal">Working Presidents block</h2>
+        {F("presidents_eyebrow", "Presidents eyebrow (small label)")}
+        {F("presidents_title", "Presidents section title")}
       </div>
 
       {msg && <p className="mt-3 text-sm text-brown">{msg}</p>}

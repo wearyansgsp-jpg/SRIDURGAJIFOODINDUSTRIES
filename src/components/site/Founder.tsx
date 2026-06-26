@@ -26,11 +26,11 @@ export function Founder() {
 
           <div>
             <div className="text-xs font-semibold uppercase tracking-[0.25em] text-brown">
-              From the Founder
+              {s.founder_eyebrow ?? "From the Founder"}
             </div>
             <h2 className="mt-3 font-display text-4xl font-bold text-charcoal sm:text-5xl">
-              "Every grain carries
-              <span className="text-gradient-gold"> our family name."</span>
+              {s.founder_headline ?? "Every grain carries"}
+              <span className="text-gradient-gold"> {s.founder_headline_accent ?? "our family name."}</span>
             </h2>
             <Quote className="mt-6 h-8 w-8 text-gold" />
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -47,10 +47,10 @@ export function Founder() {
         <div className="mt-24">
           <div className="text-center">
             <div className="text-xs font-semibold uppercase tracking-[0.25em] text-brown">
-              The Brain Behind
+              {s.presidents_eyebrow ?? "The Brain Behind"}
             </div>
             <h3 className="mt-3 font-display text-3xl font-bold text-charcoal sm:text-4xl">
-              Our Working Presidents
+              {s.presidents_title ?? "Our Working Presidents"}
             </h3>
           </div>
           <div className="mt-12 grid gap-8 sm:grid-cols-2">

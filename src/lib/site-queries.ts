@@ -195,7 +195,6 @@ export type SiteSettings = {
   founder_eyebrow: string | null;
   founder_headline: string | null;
   founder_headline_accent: string | null;
-  founder_headline_accent: string | null;
   presidents_eyebrow: string | null;
   presidents_title: string | null;
 };

@@ -21,6 +21,11 @@ type Settings = {
   founder_quote: string | null;
   about_image: string | null;
   about_text: string | null;
+  founder_eyebrow: string | null;
+  founder_headline: string | null;
+  founder_headline_accent: string | null;
+  presidents_eyebrow: string | null;
+  presidents_title: string | null;
 };
 
 function SettingsPage() {

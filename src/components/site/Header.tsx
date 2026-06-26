@@ -29,7 +29,7 @@ export function Header() {
       >
         <div
           className={`flex items-center justify-between rounded-md px-4 py-3 transition-all duration-300 ${
-            scrolled ? "bg-white shadow-soft border border-border" : "bg-transparent"
+            scrolled ? "bg-white shadow-soft border border-border" : "bg-white/95 backdrop-blur-sm border border-border"
           }`}
         >
           <a href="#home" className="flex items-center gap-3 min-w-0">

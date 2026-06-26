@@ -59,7 +59,7 @@ function AdminShell() {
         </div>
         <nav className="flex-1 overflow-y-auto p-3">
           {NAV.map((n) => {
-            const active = n.exact ? pathname === n.to : pathname.startsWith(n.to);
+            const active = 'exact' in n ? pathname === n.to : pathname.startsWith(n.to);
             return (
               <Link key={n.to} to={n.to}
                 className={`mb-1 flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition ${

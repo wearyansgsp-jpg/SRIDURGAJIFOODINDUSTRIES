@@ -228,12 +228,17 @@ export type Database = {
           address: string | null
           company_name: string
           email: string | null
+          founder_eyebrow: string | null
+          founder_headline: string | null
+          founder_headline_accent: string | null
           founder_image: string | null
           founder_name: string | null
           founder_quote: string | null
           founder_role: string | null
           id: number
           phone: string | null
+          presidents_eyebrow: string | null
+          presidents_title: string | null
           tagline: string | null
           updated_at: string
           whatsapp_number: string | null
@@ -244,12 +249,17 @@ export type Database = {
           address?: string | null
           company_name?: string
           email?: string | null
+          founder_eyebrow?: string | null
+          founder_headline?: string | null
+          founder_headline_accent?: string | null
           founder_image?: string | null
           founder_name?: string | null
           founder_quote?: string | null
           founder_role?: string | null
           id?: number
           phone?: string | null
+          presidents_eyebrow?: string | null
+          presidents_title?: string | null
           tagline?: string | null
           updated_at?: string
           whatsapp_number?: string | null
@@ -260,12 +270,17 @@ export type Database = {
           address?: string | null
           company_name?: string
           email?: string | null
+          founder_eyebrow?: string | null
+          founder_headline?: string | null
+          founder_headline_accent?: string | null
           founder_image?: string | null
           founder_name?: string | null
           founder_quote?: string | null
           founder_role?: string | null
           id?: number
           phone?: string | null
+          presidents_eyebrow?: string | null
+          presidents_title?: string | null
           tagline?: string | null
           updated_at?: string
           whatsapp_number?: string | null
@@ -404,12 +419,17 @@ export type Database = {
           address: string | null
           company_name: string | null
           email: string | null
+          founder_eyebrow: string | null
+          founder_headline: string | null
+          founder_headline_accent: string | null
           founder_image: string | null
           founder_name: string | null
           founder_quote: string | null
           founder_role: string | null
           id: number | null
           phone: string | null
+          presidents_eyebrow: string | null
+          presidents_title: string | null
           tagline: string | null
           whatsapp_number: string | null
         }
@@ -419,12 +439,17 @@ export type Database = {
           address?: string | null
           company_name?: string | null
           email?: string | null
+          founder_eyebrow?: string | null
+          founder_headline?: string | null
+          founder_headline_accent?: string | null
           founder_image?: string | null
           founder_name?: string | null
           founder_quote?: string | null
           founder_role?: string | null
           id?: number | null
           phone?: string | null
+          presidents_eyebrow?: string | null
+          presidents_title?: string | null
           tagline?: string | null
           whatsapp_number?: string | null
         }
@@ -434,12 +459,17 @@ export type Database = {
           address?: string | null
           company_name?: string | null
           email?: string | null
+          founder_eyebrow?: string | null
+          founder_headline?: string | null
+          founder_headline_accent?: string | null
           founder_image?: string | null
           founder_name?: string | null
           founder_quote?: string | null
           founder_role?: string | null
           id?: number | null
           phone?: string | null
+          presidents_eyebrow?: string | null
+          presidents_title?: string | null
           tagline?: string | null
           whatsapp_number?: string | null
         }

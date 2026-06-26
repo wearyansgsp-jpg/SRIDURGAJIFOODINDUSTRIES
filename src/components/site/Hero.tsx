@@ -31,8 +31,7 @@ export function Hero() {
             {slide.eyebrow}
           </div>
           <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
-            Sri Durga Ji Food Industries
-            <span className="mt-2 block text-gradient-gold">{slide.title}</span>
+            <span className="text-gradient-gold">{slide.title}</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75">
             {slide.desc}

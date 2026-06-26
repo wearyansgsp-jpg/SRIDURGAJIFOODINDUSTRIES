@@ -6,6 +6,7 @@ import {
   useRouter,
 } from "@tanstack/react-router";
 import { useEffect } from "react";
+import type { SupabaseClient, Session } from "@supabase/supabase-js";
 
 function NotFoundComponent() {
   return (

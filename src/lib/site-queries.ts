@@ -206,12 +206,12 @@ const SETTINGS_FALLBACK: SiteSettings = {
   whatsapp_number: WHATSAPP_NUMBER,
   email: COMPANY_EMAIL,
   address: COMPANY_ADDRESS,
-  founder_name: "Sh. Durga Prasad",
+  founder_name: "Sh. Sham Lal Verma",
   founder_role: "Founder & Chairman",
   founder_image:
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80",
   founder_quote:
-    "When my father set up our first chakki in 1992, he taught me one rule — never compromise on the wheat you grind. Three decades later, that promise still walks into every sack we send out. We are not just a factory; we are custodians of a quality you can taste.",
+    "I started this journey in 1992 with a single roller mill and a simple belief — that every family deserves flour they can trust. Over three decades, Sri Durga Ji Food Industries has grown from a local chakki into a modern FSSAI-certified manufacturing unit supplying Maida, Suji, Atta and Wheat Bran across 12+ states.\n\nOur strength lies in our people and our process. We source the finest Punjab wheat, clean and temper it with precision, mill it under strict hygiene standards, and pack it fresh every single day. Every sack that leaves our plant carries not just our brand, but my personal promise — no compromise on quality, no shortcut on integrity.\n\nToday, as we supply distributors, wholesalers, bakeries and HoReCa kitchens nationwide, I remain grateful to the farmers, partners and customers who placed their faith in us. This is not merely a business; it is a legacy built one grain at a time.",
   about_image:
     "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80",
   about_text:

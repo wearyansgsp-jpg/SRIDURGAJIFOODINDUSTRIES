@@ -10,7 +10,7 @@ export const Route = createFileRoute("/_authenticated/admin/social")({
       fields={[
         { key: "name", label: "Name", type: "text" },
         { key: "url", label: "URL", type: "url" },
-        { key: "icon", label: "Lucide icon name", type: "text", placeholder: "Facebook, Instagram, Linkedin, MessageCircle…" },
+        { key: "icon", label: "Lucide icon name", type: "text", placeholder: "Facebook, Instagram, Linkedin, MessageCircle, Store…" },
         { key: "sort_order", label: "Sort order", type: "number" },
         { key: "is_active", label: "Active", type: "boolean" },
       ]}

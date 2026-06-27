@@ -5,11 +5,11 @@ export function Founder() {
   const PRESIDENTS = usePresidents();
   const s = useSiteSettings();
   return (
-    <section id="founder" className="relative bg-gradient-cream py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
+    <section id="founder" className="relative bg-gradient-cream py-16 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="relative max-w-md mx-auto lg:mx-0">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-soft">
               <img
                 src={s.founder_image ?? ""}
                 alt={s.founder_name ?? "Founder"}
@@ -17,26 +17,26 @@ export function Founder() {
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 rounded-2xl glass-dark p-4">
-                <div className="font-display text-xl font-bold text-cream">{s.founder_name}</div>
-                <div className="text-xs uppercase tracking-widest text-gold">{s.founder_role}</div>
+              <div className="absolute bottom-4 left-4 right-4 rounded-xl glass-dark p-3">
+                <div className="font-display text-lg font-bold text-cream">{s.founder_name}</div>
+                <div className="text-[10px] uppercase tracking-widest text-gold">{s.founder_role}</div>
               </div>
             </div>
           </div>
 
           <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-brown">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brown">
               {s.founder_eyebrow ?? "From the Founder"}
             </div>
-            <h2 className="mt-3 font-display text-4xl font-bold text-charcoal sm:text-5xl">
+            <h2 className="mt-2 font-display text-2xl font-bold text-charcoal sm:text-3xl">
               {s.founder_headline ?? "Every grain carries"}
               <span className="text-gradient-gold"> {s.founder_headline_accent ?? "our family name."}</span>
             </h2>
-            <Quote className="mt-6 h-8 w-8 text-gold" />
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            <Quote className="mt-4 h-6 w-6 text-gold" />
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-4">
               {s.founder_quote}
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-charcoal px-4 py-3 text-sm text-cream">
+            <div className="mt-5 inline-flex items-center gap-2 rounded-xl bg-charcoal px-3 py-2 text-xs text-cream">
               — {s.founder_name}
             </div>
           </div>

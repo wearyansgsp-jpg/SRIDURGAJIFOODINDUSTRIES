@@ -1,0 +1,5 @@
+UPDATE public.site_settings SET founder_name = 'Sh. Sham Lal Verma', founder_role = 'Founder & Chairman', founder_quote = 'I started this journey in 1992 with a single roller mill and a simple belief — that every family deserves flour they can trust. Over three decades, Sri Durga Ji Food Industries has grown from a local chakki into a modern FSSAI-certified manufacturing unit supplying Maida, Suji, Atta and Wheat Bran across 12+ states.
+
+Our strength lies in our people and our process. We source the finest Punjab wheat, clean and temper it with precision, mill it under strict hygiene standards, and pack it fresh every single day. Every sack that leaves our plant carries not just our brand, but my personal promise — no compromise on quality, no shortcut on integrity.
+
+Today, as we supply distributors, wholesalers, bakeries and HoReCa kitchens nationwide, I remain grateful to the farmers, partners and customers who placed their faith in us. This is not merely a business; it is a legacy built one grain at a time.' WHERE id = 1;

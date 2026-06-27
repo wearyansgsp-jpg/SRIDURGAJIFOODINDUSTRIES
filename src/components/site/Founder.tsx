@@ -8,7 +8,7 @@ export function Founder() {
     <section id="founder" className="relative bg-gradient-cream py-10 sm:py-12">
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
-          <div className="relative max-w-[240px] mx-auto lg:mx-0">
+          <div className="relative max-w-[350px] mx-auto lg:mx-0">
             <div className="relative aspect-square overflow-hidden rounded-2xl shadow-soft">
               <img
                 src={s.founder_image ?? ""}

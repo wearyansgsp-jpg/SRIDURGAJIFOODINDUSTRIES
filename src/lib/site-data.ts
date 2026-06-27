@@ -124,6 +124,7 @@ export const SOCIAL = [
   { name: "Instagram", url: "https://instagram.com/sridurgajifoods", icon: "Instagram" },
   { name: "LinkedIn", url: "https://linkedin.com/company/sridurgajifoods", icon: "Linkedin" },
   { name: "WhatsApp", url: `https://wa.me/${WHATSAPP_NUMBER}`, icon: "MessageCircle" },
+  { name: "Google Business", url: "https://g.page/sridurgajifoods", icon: "Store" },
 ];
 
 export const WHY_US = [

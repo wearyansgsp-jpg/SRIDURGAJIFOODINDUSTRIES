@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Public can read site info" ON public.site_settings; REVOKE SELECT ON public.site_settings FROM anon;

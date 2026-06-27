@@ -5,7 +5,7 @@ export function Founder() {
   const PRESIDENTS = usePresidents();
   const s = useSiteSettings();
   return (
-    <section id="founder" className="relative bg-gradient-cream py-16 sm:py-20">
+    <section id="founder" className="relative bg-gradient-cream py-10 sm:py-12">
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="relative max-w-md mx-auto lg:mx-0">

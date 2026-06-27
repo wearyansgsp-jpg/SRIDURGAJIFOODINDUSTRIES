@@ -77,9 +77,6 @@ export function Footer() {
           <a href="https://mashoorbano.com" target="_blank" rel="noreferrer" aria-label="MashoorBano">
             <img src={mashoorLogo} alt="MashoorBano" className="h-28 w-auto sm:h-36" loading="lazy" />
           </a>
-          <p className="mt-5 text-sm text-cream/80">
-            Designed & developed by <span className="font-semibold text-[#ff6b1a]">MashoorBano</span> &nbsp;•&nbsp; +91 78147 18340
-          </p>
         </div>
       </div>
     </footer>
